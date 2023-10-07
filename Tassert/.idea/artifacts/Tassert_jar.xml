@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Tassert:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tassert_jar</output-path>
+    <root id="archive" name="Tassert.jar">
+      <element id="module-output" name="Tassert" />
+    </root>
+  </artifact>
+</component>
