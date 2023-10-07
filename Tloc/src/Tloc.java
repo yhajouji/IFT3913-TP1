@@ -12,7 +12,7 @@ public class Tloc {
             System.out.println("Error : chemin du fichier manquant");
         } else {
 
-            Path chemin = Paths.get(args.toString());
+            Path chemin = Paths.get(args[0].toString());
             System.out.println(tloc(chemin));
 
         }
@@ -22,7 +22,7 @@ public class Tloc {
     public static int tloc (Path fileName){
 
         int valeurTloc = 0;
-        System.out.println(fileName);
+        //System.out.println(fileName);
 
         try  {
 

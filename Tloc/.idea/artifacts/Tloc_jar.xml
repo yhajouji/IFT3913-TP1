@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Tloc:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tloc_jar</output-path>
+    <root id="archive" name="Tloc.jar">
+      <element id="module-output" name="Tloc" />
+    </root>
+  </artifact>
+</component>
