@@ -32,7 +32,13 @@ public class Tassert {
 
                 line.trim();
 
-
+                if (line.startsWith("assert") || line.startsWith("fail")){
+                    valeurTassert++;
+                }
+                /*
+                if (line.startsWith("fail")){
+                    valeurTassert++;
+                } */
 
             }
 
