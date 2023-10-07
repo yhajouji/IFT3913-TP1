@@ -1,6 +1,4 @@
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,20 +8,14 @@ public class Tloc {
 
     public static void main(String[] args) {
 
-        Path chemin = Paths.get("C:/WorkSpace/fichierTest.txt");
-        //String filename = chemin.getFileName().toString();
-        System.out.println(tloc(chemin));
-        /*
-        if (args.length != 1) {
-            System.out.println("Error : 1 argument manquant");
+        if (args.length == 0) {
+            System.out.println("Error : chemin du fichier manquant");
         } else {
 
-            //Path chemin = Paths.get(args.toString());
-            //String filename = chemin.getFileName().toString();
-            //System.out.println(tloc(filename));
+            Path chemin = Paths.get(args.toString());
+            System.out.println(tloc(chemin));
 
         }
-        */
 
     }
 
@@ -33,17 +25,33 @@ public class Tloc {
         System.out.println(fileName);
 
         try  {
-            //System.out.println(fileName);
 
             BufferedReader breader = Files.newBufferedReader(fileName);
-
 
             String line;
 
             while ((line = breader.readLine()) != null){
+
                 line.trim();
-                valeurTloc++;
-                System.out.println(line);
+
+                if (line.startsWith("//")){
+                    continue;
+                }
+
+                if (line.startsWith("/*")){
+                    continue;
+                }
+
+                if (line.startsWith("*")){
+                    continue;
+                }
+
+                if (line.endsWith("*/")){
+                    continue;
+                }else {
+                    valeurTloc++;
+                }
+
             }
 
             breader.close();
